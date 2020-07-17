@@ -154,10 +154,14 @@ input {
 
 .save {
   background-color: rgba(47, 185, 29, 0.651);
+  display: inline-block;
+  padding: 10px;
 }
 
 .delete {
   background-color: rgba(255, 0, 0, 0.418);
+  display: inline-block;
+  padding: 10px;
 }
 
 .back {
@@ -169,4 +173,13 @@ input {
   justify-content: space-between;
   justify-self: flex-start;
   width: 90%;
+  align-items: center;
+}
+
+.l {
+  display: flex;
+}
+
+.editstate > :nth-child(2) {
+  align-self: center;
 }
