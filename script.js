@@ -64,7 +64,7 @@ const UICtrl = (function () {
         <span><em>&nbsp;|| Calories:</em> <span class="itemCal">${it.calories}</span></span>
         </div>
         <div class="right">
-          <button class="Edit">E</button>
+          <i class="fas fa-edit"></i>
         </div>
       </div>
         `;
@@ -116,7 +116,7 @@ const App = (function (ItemCtrl, UICtrl, StorageCtrl) {
     document.querySelector('.add_btn').addEventListener('click', () => {
       const mealName = document.querySelector('.meal').value;
       const calories = parseInt(document.querySelector('.calories').value);
-      const id = ItemCtrl.data.length + 1;
+      const id = Math.round(Math.random() * 999999);
 
       if (mealName !== '' && calories) {
         UICtrl.clearInputs();
@@ -153,7 +153,7 @@ const App = (function (ItemCtrl, UICtrl, StorageCtrl) {
     });
 
     document.querySelector('.items').addEventListener('click', (e) => {
-      if (e.target.className === 'Edit') {
+      if (e.target.classList.contains('fa-edit')) {
         UICtrl.editstate_on();
         const id = parseInt(
           e.target.parentElement.parentElement.classList[1].split('-')[1]
